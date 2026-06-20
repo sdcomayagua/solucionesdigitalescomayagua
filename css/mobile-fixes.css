@@ -1,87 +1,22 @@
-/* Ajustes móviles: encabezado más limpio, acceso a Admin y modal funcional */
+/* Ajustes móviles: encabezado limpio, admin en menú inferior y paneles útiles */
 @media (max-width:880px){
-  body{
-    background:linear-gradient(180deg,#eef8f6 0,#f7fbfc 170px,#f5f8fb 100%)!important;
-  }
-  .main{
-    padding-top:18px!important;
-  }
-  .topbar{
-    margin:0 0 14px!important;
-    padding:10px 12px 12px!important;
-    border:1px solid rgba(223,232,238,.72);
-    border-radius:24px;
-    background:rgba(255,255,255,.58);
-    box-shadow:0 10px 28px rgba(15,45,65,.055);
-    backdrop-filter:blur(14px);
-  }
-  .title-kicker{
-    font-size:.68rem!important;
-    letter-spacing:.12em!important;
-  }
-  .page-title{
-    font-size:1.62rem!important;
-    margin:7px 0 4px!important;
-    letter-spacing:-.045em!important;
-  }
-  .page-subtitle{
-    font-size:.92rem!important;
-    line-height:1.38!important;
-    max-width:100%!important;
-  }
-  .mobile-quick-panel{
-    margin-top:6px!important;
-    border-radius:24px!important;
-    padding:18px!important;
-  }
-  .mobile-quick-panel h2{
-    font-size:1.36rem!important;
-    max-width:310px!important;
-  }
-  .mobile-quick-panel p{
-    font-size:.92rem!important;
-    max-width:330px!important;
-  }
-  .stat-card{
-    min-height:112px!important;
-  }
-  .stat-value{
-    font-size:1.18rem!important;
-  }
-  .mobile-nav{
-    grid-template-columns:repeat(6,1fr)!important;
-  }
-  .mobile-nav button{
-    min-width:0;
-    font-size:.6rem!important;
-    padding:0 2px;
-  }
+  body{background:linear-gradient(180deg,#eef8f6 0,#f7fbfc 170px,#f5f8fb 100%)!important}
+  .main{padding-top:18px!important}
+  .topbar{margin:0 0 14px!important;padding:10px 12px 12px!important;border:1px solid rgba(223,232,238,.72);border-radius:24px;background:rgba(255,255,255,.58);box-shadow:0 10px 28px rgba(15,45,65,.055);backdrop-filter:blur(14px)}
+  .title-kicker{font-size:.68rem!important;letter-spacing:.12em!important}
+  .page-title{font-size:1.62rem!important;margin:7px 0 4px!important;letter-spacing:-.045em!important}
+  .page-subtitle{font-size:.92rem!important;line-height:1.38!important;max-width:100%!important}
+  .mobile-quick-panel{margin-top:6px!important;border-radius:24px!important;padding:18px!important}
+  .mobile-quick-panel h2{font-size:1.36rem!important;max-width:310px!important}
+  .mobile-quick-panel p{font-size:.92rem!important;max-width:330px!important}
+  .stat-card{min-height:112px!important}
+  .stat-value{font-size:1.18rem!important}
+  .mobile-nav{grid-template-columns:repeat(6,1fr)!important}
+  .mobile-nav button{min-width:0;font-size:.6rem!important;padding:0 2px}
   .mobile-nav span{font-size:1rem!important}
 }
 
-.mobile-admin-fab{
-  display:none;
-}
-@media (max-width:880px){
-  .mobile-admin-fab{
-    position:fixed;
-    right:14px;
-    bottom:92px;
-    z-index:46;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    min-height:44px;
-    padding:0 14px;
-    border:1px solid rgba(15,118,110,.20);
-    border-radius:999px;
-    background:#102027;
-    color:#fff;
-    font-weight:900;
-    box-shadow:0 14px 36px rgba(15,45,65,.25);
-  }
-}
+.mobile-admin-fab{display:none!important}
 
 @media (max-width:880px){
   .modal-backdrop{padding:10px!important;align-items:end!important;place-items:end center!important}
@@ -90,3 +25,41 @@
   .detail-action-grid .btn{min-height:54px!important;font-size:1rem!important;letter-spacing:.01em}
   .btn-row.mt-16 .btn.small{min-height:46px;font-size:.95rem}
 }
+
+/* Admin: botones ordenados */
+@media (max-width:880px){
+  #adminBankPanel{margin-bottom:12px}
+  .panel-header .btn-row{
+    width:100%;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:9px!important;
+  }
+  .panel-header .btn-row .btn{
+    width:100%;
+    min-height:48px;
+    white-space:normal;
+    text-align:center;
+    line-height:1.15;
+    padding:8px 10px;
+  }
+  .panel-header .btn-row .btn.blue{grid-column:auto}
+}
+
+.bank-panel{margin:0 0 14px;padding:16px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.92);box-shadow:var(--shadow-sm)}
+.bank-panel h2{margin:0 0 4px;font-size:1.05rem;letter-spacing:-.02em}
+.bank-panel p{margin:0 0 12px;color:var(--muted);font-size:.88rem;line-height:1.3}
+.bank-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px}
+.bank-btn{border:1px solid var(--line);background:white;color:var(--ink);min-height:46px;border-radius:15px;font-weight:900;padding:9px 10px;text-align:center;box-shadow:0 4px 12px rgba(15,45,65,.045)}
+.bank-btn.primary{background:var(--brand);border-color:var(--brand);color:white}
+.bank-btn.blue{background:var(--blue);border-color:var(--blue);color:white}
+.bank-btn.money{background:#fff4df;border-color:#ffd389;color:#704a00}
+@media (max-width:880px){.bank-actions{grid-template-columns:repeat(2,minmax(0,1fr))}.bank-btn{font-size:.82rem;min-height:48px}.bank-btn.full{grid-column:1/-1}}
+
+/* Selector por categoría para cotizar/vender */
+.smart-selector{display:grid;gap:10px;margin:0 0 12px;padding:12px;border:1px solid #dcebea;border-radius:18px;background:#f8fcfb}
+.smart-selector-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.smart-selector label{display:block;font-weight:900;color:#30444f;margin:0 0 6px;font-size:.82rem}
+.smart-selector select{width:100%;min-height:44px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 12px;font-weight:800;color:#102027}
+.smart-selector small{color:var(--muted);font-weight:800;line-height:1.25}
+@media (max-width:880px){.smart-selector-row{grid-template-columns:1fr}.smart-selector select{font-size:.92rem}.smart-selector small{font-size:.76rem}}
