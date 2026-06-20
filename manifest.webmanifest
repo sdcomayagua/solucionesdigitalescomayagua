@@ -1,0 +1,17 @@
+{
+  "name": "SDC Smart Panel",
+  "short_name": "SDC Panel",
+  "description": "Panel privado para inventario, cotizaciones, ventas y recibos de SD Comayagua.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f8fb",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "assets/logo-sdc-2026.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
