@@ -1,0 +1,22 @@
+/* V7: corrección móvil para encabezado, espacios y nombres de productos */
+.sdc-mobile-brand-fix{display:none}
+.sdc-product-info-fix{display:flex;flex-direction:column;gap:7px;padding:12px 13px 14px;color:var(--ink,#102027);background:linear-gradient(180deg,#fff,#f8fbfd);border-top:1px solid var(--line,#dfe8ee)}
+.sdc-product-name-fix{color:var(--ink,#102027);font-size:.94rem;font-weight:950;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.sdc-product-hint-fix{color:var(--brand-dark,#0b5d57);background:#eefbf7;border:1px solid #c9efe2;border-radius:12px;padding:7px 8px;font-size:.72rem;font-weight:900;line-height:1.15;text-align:center}
+@media (max-width:880px){
+  body{overflow-x:hidden!important}.main,main{max-width:100%!important}
+  .sdc-mobile-brand-fix{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px;margin:0 0 12px;padding:12px 14px;border:1px solid rgba(223,232,238,.9);border-radius:22px;background:linear-gradient(135deg,#102027,#0b5d57 62%,#0f5f86);color:#fff;box-shadow:0 12px 34px rgba(15,45,65,.16)}
+  .sdc-mobile-brand-fix .brand-dot{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);font-weight:950}
+  .sdc-mobile-brand-fix strong{display:block;font-size:1rem;letter-spacing:.03em;line-height:1.05}.sdc-mobile-brand-fix span{display:block;margin-top:3px;color:rgba(255,255,255,.76);font-size:.76rem;font-weight:800;line-height:1.2}
+  .topbar,.app-header,.header,.top-header{min-height:auto!important;height:auto!important;max-height:none!important;overflow:visible!important}
+  .topbar>div:first-child,.title-kicker,.page-title,.page-subtitle{display:block!important;visibility:visible!important;opacity:1!important}.page-title{color:var(--ink,#102027)!important;font-weight:950!important}.page-subtitle{color:var(--muted,#687782)!important;font-weight:750!important}
+  .toolbar,.sticky-controls{margin-bottom:10px!important}
+  .product-grid,.products-grid,.catalog-grid,[data-products-grid]{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important;align-items:stretch!important}
+  .product-grid>*,.products-grid>*,.catalog-grid>*,.product-card,.interactive-product{min-height:0!important;height:auto!important;max-height:none!important;width:auto!important;max-width:100%!important;overflow:hidden!important}
+  .product-card,.interactive-product{display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:0!important}
+  .product-media,.product-card .product-media,.interactive-product .product-media{width:auto!important;max-width:none!important;min-height:0!important;height:auto!important;margin:9px 9px 0!important;aspect-ratio:1/1!important}.product-media img,.product-card img,.interactive-product img{max-width:100%!important;max-height:100%!important;object-fit:contain!important}
+  .product-body,.product-card .product-body,.interactive-product .product-body{display:flex!important;visibility:visible!important;opacity:1!important;flex-direction:column!important;gap:7px!important;padding:10px 11px 12px!important;color:var(--ink,#102027)!important}
+  .product-title,.product-name,.item-title,.product-card h3,.product-card h4,.interactive-product h3,.interactive-product h4{display:-webkit-box!important;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden!important;visibility:visible!important;opacity:1!important;min-height:auto!important;color:var(--ink,#102027)!important;font-size:.86rem!important;line-height:1.18!important;font-weight:950!important}
+  .product-meta,.product-price,.product-tap-hint,.sdc-product-info-fix{visibility:visible!important;opacity:1!important}.product-price{color:var(--brand-dark,#0b5d57)!important;font-size:1rem!important;line-height:1.08!important}.product-tap-hint{font-size:.66rem!important;padding:7px!important;border-radius:11px!important}
+}
+@media (max-width:380px){.product-grid,.products-grid,.catalog-grid,[data-products-grid]{grid-template-columns:1fr!important}}
