@@ -35,6 +35,34 @@
     });
   }
 
+  function repairHeaderAndCards(){
+    const main = document.querySelector('.main');
+    if (main && !main.querySelector('.sdc-mobile-brand-fix')) {
+      const brand = document.createElement('div');
+      brand.className = 'sdc-mobile-brand-fix';
+      brand.innerHTML = '<div class="brand-dot">SD</div><div><strong>SD COMAYAGUA</strong><span>Inventario · ventas · catálogo</span></div>';
+      main.insertBefore(brand, main.firstElementChild || null);
+    }
+    document.querySelectorAll('.product-card,.interactive-product').forEach(card => {
+      const current = card.querySelector('.product-title,.product-name,.item-title,.sdc-product-name-fix');
+      const img = card.querySelector('img[alt]');
+      let name = (card.getAttribute('aria-label') || '').replace(/^Abrir opciones de\s*/i, '').trim();
+      if (!name && img && !/logo|imagen/i.test(img.alt || '')) name = img.alt.trim();
+      if (!name) return;
+      if (current) {
+        if (!current.textContent.trim()) current.textContent = name;
+        current.style.visibility = 'visible';
+        current.style.opacity = '1';
+        return;
+      }
+      if ((card.innerText || '').trim().length > 2) return;
+      const box = document.createElement('div');
+      box.className = 'sdc-product-info-fix';
+      box.innerHTML = `<div class="sdc-product-name-fix">${esc(name)}</div><div class="sdc-product-hint-fix">Tocar para ver opciones</div>`;
+      card.appendChild(box);
+    });
+  }
+
   function quoteItems(){ return read(STORE.quote, []).map(item => ({...item, product: findProduct(item.id) || item.snapshot || {}})); }
   function subtotal(items){ return items.reduce((sum,i)=>sum + Number(i.product.price || 0) * Number(i.qty || 1), 0); }
   function buildOutsideQuote(mode){
@@ -58,6 +86,6 @@
     if (action === 'admin-edit') { event.preventDefault(); event.stopImmediatePropagation(); showToast('Abriendo administrador para editar producto.'); go('admin'); }
   }, true);
 
-  const observer = new MutationObserver(() => { document.querySelectorAll('.mobile-admin-fab').forEach(el => el.remove()); patchMobileNav(); patchProductSelectors(); });
-  window.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.mobile-admin-fab').forEach(el => el.remove()); patchMobileNav(); patchProductSelectors(); observer.observe(document.body, { childList:true, subtree:true }); });
+  const observer = new MutationObserver(() => { document.querySelectorAll('.mobile-admin-fab').forEach(el => el.remove()); patchMobileNav(); patchProductSelectors(); repairHeaderAndCards(); });
+  window.addEventListener('DOMContentLoaded', () => { document.querySelectorAll('.mobile-admin-fab').forEach(el => el.remove()); patchMobileNav(); patchProductSelectors(); repairHeaderAndCards(); observer.observe(document.body, { childList:true, subtree:true }); });
 })();
