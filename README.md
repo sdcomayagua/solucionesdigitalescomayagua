@@ -24,3 +24,6 @@ Abrir `index.html` o subir la carpeta completa a GitHub Pages.
 - Totales del mensaje más legibles con cantidades, precios y subtotales en negrita.
 - Total de Comayagua en renglón separado.
 - Los mensajes nuevos ya no usan frases de disponibilidad; solo muestran producto, envío y total.
+
+## V7
+- Preparada corrección visual para móvil: encabezado, espacios y nombres de productos.
